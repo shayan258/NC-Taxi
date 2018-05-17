@@ -1,0 +1,44 @@
+<!--
+  Generated template for the InboxPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='loginbutton'>
+    <ion-title>Drivers</ion-title>
+   
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- <ion-searchbar (ionInput)="getDrivers()" [showCancelButton]="true" ></ion-searchbar> -->
+
+    <ion-list>
+      <ion-item-sliding #item *ngFor="let driver of driversList">
+    
+    <ion-item >
+      <ion-avatar item-left> <img src="assets/img/profile-picture.png" alt="Avatar"></ion-avatar>
+      <h2>{{driver.firstName}} {{driver.lastName}}</h2>
+      <h3>{{driver.carModel}}  |  {{driver.carColor}}  |  {{driver.carYear}} </h3> 
+      <h3> {{driver.town}}</h3> <button ion-button outline [class.button-disabled]>{{driver.carPlate}} </button> 
+     
+    </ion-item>
+    <ion-item-options side="right">
+      <!-- <button ion-button color='loginbutton' medium (click)="addToFavorites()"> <ion-icon name="star"></ion-icon> Favorite </button> -->
+      <button ion-button color='secondary' medium  > <ion-icon name="call"></ion-icon> <a href="tel:{{driver.telephone}}"> &nbsp;&nbsp;  Call &nbsp; </a></button> 
+      
+        
+    </ion-item-options>
+    
+    </ion-item-sliding>
+ 
+    
+    </ion-list>
+
+    
+</ion-content>
